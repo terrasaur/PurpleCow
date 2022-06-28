@@ -14,15 +14,17 @@ public class Item {
 		this.name = null;
 	}
 
-	public Item (Long id, String name) {
-		this.id = id;
+	public Item (String name) {
 		this.name = name;
 	}
 	
 	private @Id @GeneratedValue Long id;
 	private String name;
-	public long getId() {
-		return id;
+	public Long getId() {
+		return this.id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -41,3 +43,4 @@ public class Item {
 	    return "Item{id=" + this.id + ", name=\"" + this.name + "\"}";
 	}
 }
+

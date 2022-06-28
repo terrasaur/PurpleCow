@@ -13,11 +13,12 @@ public class LoadItems {
 	@Bean
 	public CommandLineRunner initItems(ItemRepository items) {
 		// TODO actually read this from memory or something
+		// load some starter data
 		return args -> {
-			log.info("Loading: " + items.save(new Item((long)1, "apples")));
-			log.info("Loading: " + items.save(new Item((long)2, "bananas")));
-			log.info("Loading: " + items.save(new Item((long)3, "cauliflower")));
-			log.info("Loading: " + items.save(new Item((long)4, "honey")));
+			log.info("Loading: " + items.save(new Item("pencils")));
+			log.info("Loading: " + items.save(new Item("pens")));
+			log.info("Loading: " + items.save(new Item("notebook")));
+			log.info("Loading: " + items.save(new Item("paper")));
 		};
 	}
 

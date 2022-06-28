@@ -47,9 +47,9 @@ public class ItemController {
 	// current list and replace it. I guess use put instead if you want
 	// to add to the item list?
 	@PostMapping("/items")
-	protected List<Item> replaceAllItems(@RequestBody List<Item> newItems) {
+	protected List<Item> replaceAllItems(@RequestBody ItemList newItems) {
 		itemMap.deleteAllInBatch();
-		return itemMap.saveAll(newItems);
+		return itemMap.saveAll(newItems.getItems());
 	}
 
 	// updates existing item if it finds one, otherwise adds it
@@ -64,10 +64,10 @@ public class ItemController {
 		}
 	}
 
-	// saves all (TODO: look up how saveAll works if IDs match existing)
+	// saves one new item
 	@PutMapping("/items")
-	protected List<Item> addItems(@RequestBody List<Item> newItems) {
-		return itemMap.saveAll(newItems);
+	protected Item addItems(@RequestBody Item newItem) {
+		return itemMap.save(newItem);
 	}
 
 	// deletes single item
