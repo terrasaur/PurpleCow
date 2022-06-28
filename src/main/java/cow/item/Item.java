@@ -1,6 +1,5 @@
-package cow;
+package cow.item;
 
-import org.json.JSONObject;
 
 /**
  * Simple class for storing item class - probably to be expanded with functionality
@@ -8,6 +7,7 @@ import org.json.JSONObject;
  *
  */
 public class Item {
+
 	public Item (Integer id, String name) {
 		this.id = id;
 		this.name = name;
@@ -15,6 +15,13 @@ public class Item {
 	
 	private final int id;
 	private String name;
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -23,7 +30,8 @@ public class Item {
 	 * Returns a JSON string of the object Item
 	 * @return formatted JSON string
 	 */
-	public String getJson() {		
-		return "{\n\"id\": " + id + "\n, \"name\": " + JSONObject.quote(name) + "\n}";
+	@Override
+	public String toString() {
+	    return "Item{id=" + this.id + ", name=\"" + this.name + "\"}";
 	}
 }
