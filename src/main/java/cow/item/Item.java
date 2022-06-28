@@ -1,21 +1,27 @@
 package cow.item;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * Simple class for storing item class - probably to be expanded with functionality
- * @author terrasaur
  *
  */
+@Entity
 public class Item {
+	public Item() {
+		this.name = null;
+	}
 
-	public Item (Integer id, String name) {
+	public Item (Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
 	
-	private final int id;
+	private @Id @GeneratedValue Long id;
 	private String name;
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

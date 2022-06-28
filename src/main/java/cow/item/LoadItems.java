@@ -11,14 +11,13 @@ public class LoadItems {
 	private static final Logger log = LoggerFactory.getLogger(LoadItems.class);
 	
 	@Bean
-	CommandLineRunner initItems(ItemRepository items) {
+	public CommandLineRunner initItems(ItemRepository items) {
 		// TODO actually read this from memory or something
 		return args -> {
-			log.info("Loading: " + items.save(new Item(1, "apples")));
-			log.info("Loading: " + items.save(new Item(1, "apples")));
-			log.info("Loading: " + items.save(new Item(2, "bananas")));
-			log.info("Loading: " + items.save(new Item(3, "cauliflower")));
-			log.info("Loading: " + items.save(new Item(4, "honey")));
+			log.info("Loading: " + items.save(new Item((long)1, "apples")));
+			log.info("Loading: " + items.save(new Item((long)2, "bananas")));
+			log.info("Loading: " + items.save(new Item((long)3, "cauliflower")));
+			log.info("Loading: " + items.save(new Item((long)4, "honey")));
 		};
 	}
 
