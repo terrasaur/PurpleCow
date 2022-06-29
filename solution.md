@@ -12,13 +12,18 @@ By default the service will run on `http://localhost:3000/items`. If you wish to
 change the default port, edit the server.port in application.properties found in src/main/resources
 
 Supported actions:
-- GET  /items : gets all items from list
-- GET  /items/{id} : gets one item of the specified ID (if it exists)
-- POST /items : posts new list of items (deletes existing)
-- PUT  /items : adds one new item to the list
-- PUT  /items/{id} : updates existing item if it finds one, otherwise adds it
-- DELETE /items : clears all items in the list
-- DELETE /items/{id} : deletes single item
+- `GET  /items` : gets all items from list
+- `GET  /items/{id}` : gets one item of the specified ID (if it exists)
+- `POST /items` : posts new list of items (deletes existing)
+- `PUT  /items` : adds one new item to the list
+- `PUT  /items/{id}` : updates existing item if it finds one, otherwise adds it
+- `DELETE /items` : clears all items in the list
+- `DELETE /items/{id}` : deletes single item
+
+The format for a single item is:
+`{"name" : "example"}`
+For multiple items, it is:
+`{"items" = [{"name" : "example 1"}, ... , {"name" : "example n"}]}`
 
 Todos:
 - Need to create a database
